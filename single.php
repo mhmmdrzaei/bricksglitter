@@ -1,45 +1,30 @@
 <?php get_header(); ?>
+<main>
+  <section class="container">
+    <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+    <section class="pageMain">
+      <?php 
+          $embedCode = get_field('livestream_embed_code');
+          if( !empty( $embedCode ) ): ?>
+             <section class="livestreamOn">
+               <?php the_field('livestream_embed_code'); ?>
+             </section> 
+          <?php else: ; ?>
+           <figure class="eventSingleImg">
+             <?php  the_post_thumbnail('large');?>
+           </figure>
+          <?php endif; ?>
+          <h2><?php the_title(); ?></h2>
+          <?php the_content(); ?>
+    </section>
+    <section class="pageSide">
+      <?php project_posted_in(); ?>
+      <?php the_category(); ?>
+    </section>
 
-<div class="main">
-  <div class="container">
-    <div class="content">
-      <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+    <?php endwhile; // end of the loop. ?>
+  </section>
+</main>
 
-        <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-          <h1 class="entry-title"><?php the_title(); ?></h1>
-
-          <div class="entry-meta">
-            <?php project_posted_on(); ?>
-          </div><!-- .entry-meta -->
-
-          <div class="entry-content">
-            <?php the_content(); ?>
-            <?php wp_link_pages(array(
-              'before' => '<div class="page-link"> Pages: ',
-              'after' => '</div>'
-            )); ?>
-          </div><!-- .entry-content -->
-
-          <div class="entry-utility">
-            <?php project_posted_in(); ?>
-            <?php edit_post_link( 'Edit', '<span class="edit-link">', '</span>' ); ?>
-          </div><!-- .entry-utility -->
-        </div><!-- #post-## -->
-
-        <div id="nav-below" class="navigation">
-          <p class="nav-previous"><?php previous_post_link('%link', '&larr; %title'); ?></p>
-          <p class="nav-next"><?php next_post_link('%link', '%title &rarr;'); ?></p>
-        </div><!-- #nav-below -->
-
-        <?php comments_template( '', true ); ?>
-
-      <?php endwhile; // end of the loop. ?>
-
-    </div> <!-- /.content -->
-
-    <?php get_sidebar(); ?>
-
-  </div> <!-- /.container -->
-</div> <!-- /.main -->
 
 <?php get_footer(); ?>

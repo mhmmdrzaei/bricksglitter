@@ -1,7 +1,10 @@
 <footer>
-  <div class="container">
-    <p>&copy; Project Name <?php echo date('Y'); ?></p>
-  </div>
+  <section class="container">
+    <?php wp_nav_menu( array(
+      'container' => false,
+      'theme_location' => 'footer'
+    )); ?>
+  </section>
 </footer>
 
 <script>

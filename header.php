@@ -14,17 +14,19 @@
 <body <?php body_class(); ?>>
 
 <header>
-  <div class="container">
-    <h1>
+  <section class="container">
+    <figure class="logo">
       <a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home">
-        <?php bloginfo( 'name' ); ?>
+      <img src="<?php bloginfo('template_directory'); ?>/images/logo.png" alt="Bricks & Glitter Organizational logo">
       </a>
-    </h1>
+    </figure>
+    <nav class="primaryMenu">
+      <?php wp_nav_menu( array(
+        'container' => false,
+        'theme_location' => 'primary'
+      )); ?>
+    </nav>
+  </section>    
 
-    <?php wp_nav_menu( array(
-      'container' => false,
-      'theme_location' => 'primary'
-    )); ?>
-  </div> <!-- /.container -->
 </header><!--/.header-->
 
