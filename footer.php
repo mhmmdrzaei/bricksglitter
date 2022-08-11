@@ -1,9 +1,18 @@
 <footer>
   <section class="container">
-    <?php wp_nav_menu( array(
+    <section class="socialMenu">
+      <?php wp_nav_menu( array(
+        'container' => false,
+        'theme_location' => 'social'
+      )); ?>
+    </section>
+    <section class="footerMenu">
+      <?php wp_nav_menu( array(
       'container' => false,
       'theme_location' => 'footer'
     )); ?>
+    </section>
+
   </section>
 </footer>
 
