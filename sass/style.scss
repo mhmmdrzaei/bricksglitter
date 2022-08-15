@@ -37,7 +37,7 @@ a {
 		color: black;
 	}
 }
-a.readmoreLink {
+.readmoreLink {
 	color: #0029FF;
 	&:hover {
 		color: #0029FF;
@@ -66,10 +66,26 @@ main {
 	position: fixed;
 	z-index: -1;
 }
+.videoContainer {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+}
+.videoContainer iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 // home page
-.home {
+.home, .single-events {
 background: rgb(255,255,255);
-background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(0,151,255,1) 20%, rgba(255,189,255,1) 33%, rgba(229,216,255,1) 49%, rgba(215,192,0,1) 55%, rgba(155,107,0,1) 66%, rgba(155,107,0,1) 79%, rgba(21,160,255,1) 93%);
+background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 5%, rgba(0,151,255,1) 20%, rgba(255,189,255,1) 33%, rgba(229,216,255,1) 49%, rgba(215,192,0,1) 55%, rgba(155,107,0,1) 66%, rgba(155,107,0,1) 79%, rgba(21,160,255,1) 93%);
+}
+.page-id-37{
+	background: rgb(255,255,255);
+background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 14%, rgba(0,151,255,1) 53%, rgba(0,151,255,1) 93%);
 }
 .desktopImg {
 		min-height: 90vh;
@@ -91,9 +107,7 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(0,151,255,1) 20
 		top: -20px;
 		z-index: 1;
 		text-align: center;
-		a {
 			color: white;
-		}
 		
 
 }
@@ -193,6 +207,113 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(0,151,255,1) 20
 
 
 }
+
+//single Event page
+
+.singleEventContainer {
+	padding-top:250px; 
+	@extend .flex;
+	justify-content: space-between;
+	.pageMain {
+		width: 75%;
+		.eventSingleImg {
+			border: 1px solid black;
+			border-bottom: 0;
+		}
+		.eventTextInfo {
+			background: white;
+			border: 1px solid black;
+			padding: 40px;
+			margin-bottom: 100px;
+			.dateEventPage, .eventTime,.addresslocation {
+				margin-bottom: 15px;
+			}
+			.addresslocation a {
+				@extend .readmoreLink;
+			}
+			.ctaLinks {
+				margin-bottom: 40px;
+				margin-top: 40px;
+			}
+		}
+
+	}
+	.imagesVideos {
+		.videoContainer {
+			margin-bottom: 100px;
+		}
+		.fullWidthHorizontal,.centeredVertical ,.sidebySideImages {
+			margin-bottom: 100px;
+			img {
+				border: 1px solid black;
+			}
+			p {
+				padding: 10px;
+				background: white;
+				border: 1px solid black;
+				border-top: 0;
+			}
+		}
+		.centeredVertical {
+			max-width: 411px;
+			margin: 100px auto;
+		}
+		.sidebySideImages {
+			@extend .flex;
+			justify-content: space-between;
+			.sidebySideImagesEach {
+				width: 48%;
+			}
+		}
+	}
+	.map {
+		margin-bottom: 100px;
+	}
+	.pageSide {
+		width: 15%;
+		position: relative;
+		.pagesideContent {
+			position: fixed;
+		}
+		.eventTypeLink {
+			position: relative;
+			margin-bottom: 10px;
+			left: 0;
+			top: 0;
+			display: block;
+			width: fit-content;
+		}
+		.eventYearSingle {
+			padding: 10px;
+			border-radius: 25px;
+			border: 1px solid black;
+			width: fit-content;
+			margin-bottom: 5px;
+			background: white;
+		}
+	}
+	.post-categories {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		@extend .flex;
+		li {
+			padding: 10px;
+			border-radius: 25px;
+			border: 1px solid black;
+			width: fit-content;
+			background: white;
+			margin: 5px;
+			&:hover {
+				background: #0029ff;
+				a {
+					color: white;
+				}
+				
+			}
+		}
+	}
+}
 //google map
 
 .acf-map {
@@ -204,6 +325,36 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(0,151,255,1) 20
 .acf-map img {
    max-width: inherit !important;
 }
+
+//calednar 
+.calendarPage {
+	min-height: 60vh;
+	#post-0 {
+	margin-top: 200px;
+	width: 100%;
+	padding: 40px;
+	background: white;
+	border: 1px solid black;
+	}
+}
+
+//archive page
+.page-id-50 {
+	background: rgb(255,255,255);
+background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 7%, rgba(255,168,211,1) 17%, rgba(255,168,211,1) 23%, rgba(233,120,64,1) 33%, rgba(155,107,0,1) 48%, rgba(173,133,0,1) 59%, rgba(215,192,0,1) 68%, rgba(255,255,0,1) 80%, rgba(255,255,0,1) 80%, rgba(255,168,211,1) 93%);
+}
+.archivePage {
+	min-height: 80vh;
+	margin-top: 100px;
+	@extend .flex;
+	.results {
+		width: 72%;
+	}
+	.searchSettings {
+		width: 25%;
+	}
+}
+
 
 
 

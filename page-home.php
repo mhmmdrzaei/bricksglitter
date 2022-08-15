@@ -18,9 +18,9 @@
                 $caption = $desktopImg['caption']; ?>
                 <figure class="desktopImg">
                   <img src="<?php echo esc_url($url); ?>" alt="<?php echo esc_attr($alt); ?>">
-                  <section class="eventsDown">
-                      <a href="#eventsStart">Upcoming Events</a>
-                  </section>
+                  <a href="#eventsStart"><section class="eventsDown">
+                      Upcoming Events
+                  </section></a>
                </figure>
             <?php endif; ?>
             <?php
@@ -34,12 +34,12 @@
                 $caption = $mobileImg['caption']; ?>
                 <figure class="mobileImg">
                   <img src="<?php echo esc_url($url); ?>" alt="<?php echo esc_attr($alt); ?>">
-                  <section class="eventsDown">
-                      <a href="#eventsStart">Upcoming Events</a>
-                  </section>
+                  <a href="#eventsStart"><section class="eventsDown">
+                      Upcoming Events
+                  </section></a>
                </figure>
             <?php endif; ?>
-            <section class="homepageContainer">
+            <section class="homepageContainer" id="eventsStart">
             <?php if( have_rows('home_page_content') ): ?>
                 <?php while( have_rows('home_page_content') ): the_row(); ?>
                   <?php if( get_row_layout() == 'full_width_events_post' ): ?>
@@ -61,7 +61,9 @@
                                   </section> 
                                <?php else: ; ?>
                                 <figure class="eventSingleImgHome">
+                                <a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">
                                   <?php  the_post_thumbnail('large');?>
+                                </a>
                                 </figure>
                                <?php endif; ?>
                            <section class="enteryinfo">
@@ -125,11 +127,13 @@
                               $post = $featuredHalf_posts;
                               setup_postdata($post);
                            ?>
-                            <section class="halfwidthpost" id="eventsStart" aria-label="featured information container">
+                            <section class="halfwidthpost"  aria-label="featured information container">
                               <?php the_terms( $post->ID, 'topics', ' ' ); ?>
 
                              <figure class="eventSingleImgHome">
+                                <a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">
                                <?php  the_post_thumbnail('large');?>
+                           </a>
                              </figure>
 
                               <section class="enteryinfo">

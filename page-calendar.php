@@ -1,7 +1,7 @@
 
 <?php get_header();  ?>
 <?php $today = current_time('Ymd'); ?>
-<main>
+<main class="calendarPage">
   <section class="container">
   <?php // Start the loop ?>
 
