@@ -1,97 +1,52 @@
-a {
-	color: #BA209B;
-	text-decoration: none;
-	&:hover {
-		color: #D424B1;
-	}
+@font-face {
+  font-family: 'GoodSans-Regular';
+  src: url('fonts/GoodSans-Regular.woff');
+  font-weight: normal;
+      font-style: normal; 
 }
 
-/* paragraphs */
-
-p {
-	line-height: 1.5;
+@font-face {
+  font-family: 'GoodSans-BoldItalic';
+  src: url('fonts/GoodSans-BoldItalic.woff');
+  font-weight: normal;
+      font-style: normal; 
+}
+@font-face {
+  font-family: 'GoodSans-Bold';
+  src: url('fonts/GoodSans-Bold.woff');
+  font-weight: normal;
+      font-style: normal; 
 }
 
-/*blockquotes*/
-
-blockquote {
-	background: #F7F7F7;
-	margin: 0;
-	padding: 20px;
-	p {
-		margin-top: 0;
-	}
-}
-
-/*tables*/
-
-table {
-	td {
-		padding: 10px;
-	}
-	tr td:first {
-		padding-right: 0;
-	}
-}
-
-/*def lists*/
-
-dt {
-	font-weight: 600;
-	padding-bottom: 5px;
-}
-
-dd {
-	padding: 10px;
-	margin-left: 10px;
-}
-
-/*lists*/
-
-ul li, ol li {
-	padding: 3px;
-}
-
-/*PRE*/
-
-pre {
-	background: #F7F7F7;
-	padding: 10px;
-	border-radius: 4px;
-	border: 1px solid #ccc;
+@mixin fontSize($sizeValue){
+    font-size: $sizeValue * 1px;
+    font-size: ($sizeValue/10) * 1rem;
 }
 
 
-/*
-====================================
-Global Classes / Wordpress Specific
-====================================
-*/
-
-.aligncenter {
-	text-align: center;
-	margin: 0 auto;
+body {
+   font-family: 'GoodSans-Regular', sans-serif;
+   @include fontSize(12);
+}
+.current-menu-item, .current_page_item {
+  font-family: 'GoodSans-Bold', sans-serif;
+}
+b {
+  font-family: 'GoodSans-Bold', sans-serif;
+}
+i {
+  font-family: 'GoodSans-BoldItalic', sans-serif;
+}
+h1, h2, h3, h4, h5, h6,p {
+  margin-top: 0;
 }
 
-.alignleft {
-	float: left;
-}
-
-.alignright {
-	float: right;
-}
-
-img {
-	&.alignleft {
-		padding-right: 5px;
-	}
-	&.alignright {
-		padding-left: 5px;
-	}
-}
-
-.clear {
-	width: 100%;
-	float: left;
-	clear: both;
+.eventTypeLink {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 25px;
+  position: relative;
+  right: 15px;
+  top: 10px;
+   pointer-events: none;
 }

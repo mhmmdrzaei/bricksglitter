@@ -1,5 +1,5 @@
 <footer>
-  <section class="container">
+  <section class="footerContainer">
     <section class="socialMenu">
       <?php wp_nav_menu( array(
         'container' => false,

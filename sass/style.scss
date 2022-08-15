@@ -10,6 +10,7 @@
 @import 'normalize';
 @import 'typography';
 @import 'navigation';
+@import 'hamburger';
 @import 'sidebar';
 @import 'comments';
 @import 'footer';
@@ -22,9 +23,35 @@ Default Styling
 img {
 	max-width: 100%;
 	height: auto;
+	vertical-align: top;
 }
 
 body {
+}
+
+
+a {
+	color: black;
+	text-decoration: none;
+	&:hover {
+		color: black;
+	}
+}
+a.readmoreLink {
+	color: #0029FF;
+	&:hover {
+		color: #0029FF;
+		text-decoration: underline;
+	}
+}
+
+.flex {
+	display: flex;
+	flex-flow: wrap;
+}
+@mixin fontSize($sizeValue){
+    font-size: $sizeValue * 1px;
+    font-size: ($sizeValue/10) * 1rem;
 }
 
 main {
@@ -35,13 +62,137 @@ main {
 	width: 90%;
 	margin: 0 auto;
 }
+.pngsparkle {
+	position: fixed;
+	z-index: -1;
+}
+// home page
+.home {
+background: rgb(255,255,255);
+background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(0,151,255,1) 20%, rgba(255,189,255,1) 33%, rgba(229,216,255,1) 49%, rgba(215,192,0,1) 55%, rgba(155,107,0,1) 66%, rgba(155,107,0,1) 79%, rgba(21,160,255,1) 93%);
+}
+.desktopImg {
+		min-height: 90vh;
+	img {
+		margin-top: 70px;
 
-//temp home page
-.homeContainer {
-	background: rgb(255,255,255);
-	background: linear-gradient(151deg, rgba(255,255,255,1) 0%, rgba(0,151,255,1) 55%);
+	}
+} 
+
+
+
+@keyframes shakeShake {
+     0% {transform: translateY(0px)}
+    33% {transform: translateY(4px) }
+ }
+.eventsDown {
+		animation: shakeShake 2s infinite;
+		position: relative;
+		top: -20px;
+		z-index: 1;
+		text-align: center;
+		a {
+			color: white;
+		}
+		
+
+}
+.eventsDown::after{
+	content: url(images/arrow-down.png);
+	display: block;
+
+
+}
+.mobileImg {
+	display: none;
 }
 
+.homepageContainer {
+	max-width: 927px;
+	margin: 0 auto;
+	@extend .flex;
+	justify-content: space-between;
+} 
+
+.fullwidthpost {
+	margin-bottom: 100px;
+	width: 100%;
+	.eventSingleImgHome {
+		border: 1px solid black;
+		border-bottom: none;
+
+	}
+
+	.enteryinfo {
+		background: white;
+		border: 1px solid black;
+		@extend .flex;
+		justify-content: space-between;
+		padding: 30px;
+		.titleInfo {
+			width: 44%;
+		}
+		.postexcerpt  {
+			width: 52%;
+			@include fontSize(10);
+		}
+	}
+}
+.halfwidthpost {
+	width: 48%;
+	margin-bottom: 100px;
+	.enteryinfo {
+		background: white;
+		border: 1px solid black;
+		padding: 30px;
+		.postexcerpt  {
+			@include fontSize(10);
+		}
+	}
+	.eventSingleImgHome {
+		border: 1px solid black;
+		border-bottom: none;
+
+	}
+}
+.fullwidthAnnouncement, .halfwidthAnnouncement {
+	margin-bottom: 100px;
+	h3 {
+		@include fontSize(12);
+		padding: 10px;
+		border: 1px solid black;
+		// border-radius: 25px;
+		width: fit-content;
+		margin-bottom: 0;
+		position: relative;
+		right: 15px;
+		top: 0px;
+		background: black;
+		color: white;
+	}
+	.halfwidthAnnoucementContent {
+		background: white;
+		padding: 70px 30px 70px;
+		margin-top: -10px;
+		border: 1px solid black;
+	}
+	.annoucementCTAS {
+		margin: 40px 0 0;
+	}
+}
+.halfwidthAnnouncement {
+	width: 48%;
+}
+.ctaLink {
+	padding: 10px;
+	border: 1px solid black;
+	border-radius: 25px;
+	background: #0029FF;
+	color: white;
+	margin-right: 10px;
+
+
+}
 //google map
 
 .acf-map {
@@ -50,8 +201,6 @@ main {
     border: #ccc solid 1px;
     margin: 20px 0;
 }
-
-// Fixes potential theme css conflict.
 .acf-map img {
    max-width: inherit !important;
 }

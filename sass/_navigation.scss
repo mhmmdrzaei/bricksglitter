@@ -1,14 +1,44 @@
-ul.menu {
-	margin: 0;
-	padding: 0;
-	li {
-		display: inline;
-		margin-right: 10px;
-		a {
-			color: #333;
-			padding: 10px;
-			background: #333;
-			color: white;
-		}
+.headeContainer {
+	@extend .flex;
+	width: 100% !important;
+	max-width: 100% !important;
+	justify-content: space-between;
+	position: fixed;
+	z-index: 2;
+
+}
+#menu-header-menu {
+	list-style: none;
+	@extend .flex;
+	justify-content: space-between;
+}
+.primaryMenu {
+	width: 80%;
+	background: white;
+	padding-right: 5%;
+	padding-top: 20px;
+	height: fit-content;
+	padding-bottom: 10px;
+	border-bottom: 1px solid black;
+}
+.logo {
+	padding-left: 5%;
+	 padding-top: 40px;
+}
+.smaller {
+	background: white;
+	border-bottom: 1px solid black;
+	transition: all 0.2s ease-out 0s;
+
+	.logo {
+		padding-top: 20px;
+		width: 9%;
+		min-width: 120px;
+		max-width: 160px;
+		padding-bottom: 5px;
+		transition: all 1.9s ease-out 0s;
+	}
+	.primaryMenu {
+		border: none;
 	}
 }
