@@ -26,7 +26,7 @@
 
 body {
    font-family: 'GoodSans-Regular', sans-serif;
-   @include fontSize(12);
+   @include fontSize(10);
 }
 .current-menu-item, .current_page_item {
   font-family: 'GoodSans-Bold', sans-serif;

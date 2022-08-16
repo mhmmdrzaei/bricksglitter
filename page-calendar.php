@@ -40,9 +40,9 @@
 
 <?php endif; // end if there are no posts ?>
 <?php // if there are posts, Start the Loop. ?>
-
-<?php while ( have_posts() ) : the_post(); ?>
   <h2 class="headerCalendar">Upcoming:</h2>
+<?php while ( have_posts() ) : the_post(); ?>
+
 
     <article id="post-<?php the_ID(); ?>" class="calendarEvent" aria-label="Event information container">
       <a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">
@@ -50,11 +50,11 @@
           <section class="eventDateCalendar">
             <?php 
                 $startDate = get_field('date_start');
-                $endDate = get_field('date_end');
+                $endDate = get_field('date_start');
                 if( !empty( $endDate ) ): ?>
                    <?php the_field('date_start');?> - <?php the_field('date_end'); ?><br>
                 <?php else: ; ?>
-                 <?php the_field('date_start');?></br>
+                 <?php the_field('date_end');?></br>
                 <?php endif; ?>
         </section>
         <section class="eventTimeCalendar">

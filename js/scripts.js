@@ -143,5 +143,84 @@ $(function(){
 	    }
 	});
 
+	//languages options
+
+	$('.aboutLangEach:nth-child(1)').addClass('visible');
+	$('.languageLinkEach:nth-child(2)').addClass('higlightedLink');
+	
+	$('.lds-roller').hide();
+
+
+	 // $(".languageLinkEach").click(function() {
+
+	 //    if ($('.aboutLangEach').hasClass('visible')) {
+	 //      $('.aboutLangEach').removeClass('visible');
+
+	 //    } 
+	 //    var id = $(this).index();
+	 //    console.log(id);
+	 //    $('aboutLangEach:nth-child(id)').addClass('visible');
+	 //    $('.pageMain').eq(('.aboutLangEach').index(id)).addClass('visible');
+	 //    // $(this).next('.languageChoiceContent').addClass('visible');
+
+	 //  });
+
+	 $( '.languageLinkEach' ).on( 'click', function() {
+	 	   if ($('.languageLinkEach').hasClass('higlightedLink')) {
+	 	     $('.languageLinkEach').removeClass('higlightedLink');
+
+	 	   } 
+	 	  $(this).addClass('higlightedLink');
+	 	 var id = ($(this).index() - 1);
+	    $('.aboutLangEach').removeClass( 'visible' ).eq( id ).addClass( 'visible' );
+	 //    // $('.aboutLangEach').eq( $(this).index() ).addClass( 'visible' );
+	 //     // $(".aboutLangEach").removeClass("visible"); $(e.href).addClass("visible", true);
+	 });
+
+	
+
+
+
+
+	$(window).scroll(function() {
+	  var scrollBottom = $(document).height() - $(window).height() - $(window).scrollTop();
+	  var x = $(window).width();
+	  if ((scrollBottom > 350) && (x > 700)) {
+	  	$(".pageSideContent").fadeIn(500);
+	  	$(".pagesideContent").fadeIn(500);
+	  	
+
+	  } else if ((scrollBottom < 350) && (x > 700)) {
+	    $(".pageSideContent").fadeOut(500);
+	     $(".pagesideContent").fadeOut(500);
+
+
+
+	  }
+	});
+	 //smoothscroll
+	 	$("a").on('click', function(event) {
+
+	 	  // Make sure this.hash has a value before overriding default behavior
+	 	  if (this.hash !== "") {
+	 	    // Prevent default anchor click behavior
+	 	    event.preventDefault();
+
+	 	    // Store hash
+	 	    var hash = this.hash;
+
+	 	    // Using jQuery's animate() method to add smooth page scroll
+	 	    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+	 	    $('html, body').animate({
+
+	 	      scrollTop: $(hash).offset().top
+	 	    }, 800, function(){
+
+	 	      // Add hash (#) to URL when done scrolling (default click behavior)
+	 	      window.location.hash = hash;
+	 	    });
+	 	  } // End if
+	 	});
+
 
 });

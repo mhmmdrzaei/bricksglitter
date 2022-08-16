@@ -85,7 +85,7 @@ main {
 	background: linear-gradient(169deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 9%, rgba(216,194,245,1) 45%);
 }
 .pageMain {
-	min-height: 55vh;
+	min-height: 62vh;
 	.pageContent {
 		max-width: 850px;
 		padding: 60px;
@@ -110,7 +110,7 @@ background: linear-gradient(169deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 
 .desktopImg {
 		min-height: 90vh;
 	img {
-		margin-top: 70px;
+		margin-top: 50px;
 
 	}
 } 
@@ -224,6 +224,8 @@ background: linear-gradient(169deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 
 	background: #0029FF;
 	color: white;
 	margin-right: 10px;
+	display: inline-block;
+	    margin-bottom: 5px;
 
 
 }
@@ -290,10 +292,11 @@ background: linear-gradient(169deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 
 		margin-bottom: 100px;
 	}
 	.pageSide {
-		width: 15%;
+		width: 23%;
 		position: relative;
 		.pagesideContent {
 			position: fixed;
+			max-width: 300px;
 		}
 		.eventTypeLink {
 			position: relative;
@@ -350,7 +353,7 @@ background: linear-gradient(169deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 
 .calendarPage {
 	min-height: 60vh;
 	.calendarContainer {
-		margin-top: 200px;
+		margin: 200px auto;
 	}
 	#post-0,.calendarEvent {
 	width: 100%;
@@ -395,7 +398,7 @@ background: linear-gradient(169deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 
 }
 
 //archive page
-.page-id-50 {
+.page-id-50,.archive,.category {
 	background: rgb(255,255,255);
 background: linear-gradient(169deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 7%, rgba(255,168,211,1) 17%, rgba(255,168,211,1) 23%, rgba(233,120,64,1) 33%, rgba(155,107,0,1) 48%, rgba(173,133,0,1) 59%, rgba(215,192,0,1) 68%, rgba(255,255,0,1) 83%, rgba(255,255,0,1) 86%, rgba(255,168,211,1) 97%);
 }
@@ -421,6 +424,8 @@ background: linear-gradient(169deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 
 	background: white !important;
 	padding: 0 !important;
 	border: 1px solid black !important;
+	margin-bottom: 50px !important;
+	height: fit-content;
 	.featuredImageResutl{
 		border-bottom: 1px solid black !important;
 	}
@@ -455,6 +460,9 @@ background: linear-gradient(169deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 
  // 	border-radius: 25px !important;
 
  // }
+ .result {
+ 	height: 100% !important;
+ }
 
  //sponsors & Covid Page
 
@@ -467,6 +475,60 @@ background: linear-gradient(169deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 
 background: linear-gradient(169deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 9%, rgba(195,163,20,1) 45%);
 }
 
+//about page
+.page-id-39, .page-id-1047 {
+	background: rgb(255,255,255);
+	background: linear-gradient(169deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 9%, rgba(195,163,20,1) 19%, rgba(199,166,29,1) 33%, rgba(255,216,159,1) 53%, rgba(229,216,255,1) 73%, rgba(216,194,245,1) 89%);
+}
+.aboutPageContainer {
+	@extend .flex;
+	max-width: 1100px;
+	justify-content:space-between;
+	margin: 150px auto;
+	.pageMain {
+		width: 74%;
+		@include fontSize(12);
+		.aboutLangEach {
+			background: white;
+			display: none;
+			padding: 50px;
+			border: 1px solid black;
+		}
+		.visible {
+			display: block;
+		}
+	}
+	.pageside {
+		width: 23%;
+		position: relative;
+		.pageSideContent {
+			position: fixed;
+			max-width: 300px;
+			.languageSelect {
+				a {
+					@extend .ctaLink;
+					background: white;
+					color: black;
+				}
+				.higlightedLink {
+					@extend .ctaLink;
+				}
+				h3 {
+					color: #0029FF;
+				}
+			}
+		}
+		.featuredImageAbout {
+			max-width: 200px;
+			margin-top: 150px;
+
+		}
+		
+	}
+}
+.rtldirection {
+	direction: rtl;
+}
 
 
 
