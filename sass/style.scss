@@ -78,14 +78,34 @@ main {
   width: 100%;
   height: 100%;
 }
+
+//page
+.page-template-default {
+	background: rgb(255,255,255);
+	background: linear-gradient(169deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 9%, rgba(216,194,245,1) 45%);
+}
+.pageMain {
+	min-height: 55vh;
+	.pageContent {
+		max-width: 850px;
+		padding: 60px;
+		margin: 150px auto;
+		background: white;
+		border: 1px solid black;
+		a {
+			@extend .readmoreLink;
+		}
+	}
+}
+
 // home page
 .home, .single-events {
 background: rgb(255,255,255);
 background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 5%, rgba(0,151,255,1) 20%, rgba(255,189,255,1) 33%, rgba(229,216,255,1) 49%, rgba(215,192,0,1) 55%, rgba(155,107,0,1) 66%, rgba(155,107,0,1) 79%, rgba(21,160,255,1) 93%);
 }
-.page-id-37{
+.page-id-37, .page-id-1037{
 	background: rgb(255,255,255);
-background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 14%, rgba(0,151,255,1) 53%, rgba(0,151,255,1) 93%);
+background: linear-gradient(169deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 9%, rgba(21,160,255,1) 45%, rgba(83,168,255,1) 61%, rgba(255,189,255,1) 98%);
 }
 .desktopImg {
 		min-height: 90vh;
@@ -329,24 +349,61 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 
 //calednar 
 .calendarPage {
 	min-height: 60vh;
-	#post-0 {
-	margin-top: 200px;
+	.calendarContainer {
+		margin-top: 200px;
+	}
+	#post-0,.calendarEvent {
 	width: 100%;
 	padding: 40px;
 	background: white;
 	border: 1px solid black;
+	}
+	.headerCalendar {
+		background: white;
+		margin: 0;
+		padding: 20px;
+		border: 1px solid black;
+		border-bottom: 0;
+	}
+	.calendarEvent {
+		@extend .flex;
+		justify-content:space-between;
+		.eventTypeCalendar {
+			width: 20%;
+			a {
+				width: fit-content;
+				top:0;
+				right: 0;
+			}
+		}
+		.goCalendar {
+			color: #0029FF;
+			@include fontSize(18);
+		}
+		a {
+			width: 70%;
+			@extend .flex;
+			justify-content:space-between;
+			.dateCalendar {
+				width: 25%;
+			}
+			.infoCalendar {
+				width: 73%;
+			}
+		}
 	}
 }
 
 //archive page
 .page-id-50 {
 	background: rgb(255,255,255);
-background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 7%, rgba(255,168,211,1) 17%, rgba(255,168,211,1) 23%, rgba(233,120,64,1) 33%, rgba(155,107,0,1) 48%, rgba(173,133,0,1) 59%, rgba(215,192,0,1) 68%, rgba(255,255,0,1) 80%, rgba(255,255,0,1) 80%, rgba(255,168,211,1) 93%);
+background: linear-gradient(169deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 7%, rgba(255,168,211,1) 17%, rgba(255,168,211,1) 23%, rgba(233,120,64,1) 33%, rgba(155,107,0,1) 48%, rgba(173,133,0,1) 59%, rgba(215,192,0,1) 68%, rgba(255,255,0,1) 83%, rgba(255,255,0,1) 86%, rgba(255,168,211,1) 97%);
 }
 .archivePage {
 	min-height: 80vh;
-	margin-top: 100px;
+	margin: 100px auto;
 	@extend .flex;
+	justify-content:space-between;
 	.results {
 		width: 72%;
 	}
@@ -354,9 +411,61 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 
 		width: 25%;
 	}
 }
+.resdrg {
+	@extend .flex;
+	justify-content:space-between;
 
+}
+.archiveItemEach {
+	width: 48% !important;
+	background: white !important;
+	padding: 0 !important;
+	border: 1px solid black !important;
+	.featuredImageResutl{
+		border-bottom: 1px solid black !important;
+	}
+	h3 {
+		padding: 20px !important;
+		@include fontSize(10);
+	}
+	span {
+		float: right;
+		color: #0029FF;
+	}
+}
+.asp_shortcodes_container {
+	background: #F5F5F5;
+	border: 1px solid black;
+	margin: 0 !important;
+	fieldset legend {
+		font-size: 1em !important;
+		color: #0029FF !important;
+	}
+}
+ #ajaxsearchprobsettings1_1.searchsettings .asp_sett_scroll, #ajaxsearchprobsettings1_2.searchsettings .asp_sett_scroll, div.asp_sb.asp_sb_1.searchsettings .asp_sett_scroll { 
+ 	max-height: 100% !important;
+ 	// @extend .flex;
+ }
+ .asp_nores {
+ 	border: 1px solid black !important;
+ }
+ // .asp_option_cat, .asp_option .asp_option {
+ // 	padding: 10px !important;
+ // 	border: 1px solid black !important;
+ // 	border-radius: 25px !important;
 
+ // }
 
+ //sponsors & Covid Page
+
+.page-id-1110,.page-id-99, .page-id-43, .page-id-1048 {
+background: rgb(255,255,255);
+background: linear-gradient(169deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 12%, rgba(255,168,211,1) 45%);
+}
+.page-id-45, .error404{
+	background: rgb(255,255,255);
+background: linear-gradient(169deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 9%, rgba(195,163,20,1) 45%);
+}
 
 
 

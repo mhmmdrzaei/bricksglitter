@@ -32,27 +32,30 @@ defined('ABSPATH') or die("You can't access this file directly.");
 ?>
 
 
-<div class='item<?php echo apply_filters('asp_result_css_class', $asp_res_css_class, $r->id, $r); ?>'>
+<div class='archiveItemEach item<?php echo apply_filters('asp_result_css_class', $asp_res_css_class, $r->id, $r); ?>'>
 
     <?php do_action('asp_res_vertical_begin_item'); ?>
 
-    <div class='asp_content'>
-        <section class="articletitle">
-           <?php echo $r->title; ?> <img class="pdfImgSS" src="<?php bloginfo('template_directory'); ?>/images/pdficon.png">
-        </section>
-        
-        <?php if ($show_description == 1): ?>
-        <section class="articleDescription">  
-        <?php echo $r->content; ?>
-        </section>
-        <?php endif; ?>
 
-    </div>
+       <figure class="featuredImageResutl">
+           <img src="<?php echo esc_attr($r->image); ?>" alt="Image for the event <?php echo $r->title; ?>">
+       </figure>
+       <h3><a class="asp_res_url" href='<?php echo $r->link; ?>'<?php echo ($s_options['results_click_blank'])?" target='_blank'":""; ?>>
+               <?php echo $r->title; ?>
+               <?php if ($s_options['resultareaclickable'] == 1): ?>
+               
+               <?php endif; ?>
+               <span>&#8594</span>
+       </a></h3>
+
+
+       </div>
+
+
 
     <?php do_action('asp_res_vertical_after_content'); ?>
 
-    <div class='clear'></div>
+
 
     <?php do_action('asp_res_vertical_end_item'); ?>
 
-</div>

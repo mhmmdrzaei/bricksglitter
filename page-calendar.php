@@ -2,7 +2,7 @@
 <?php get_header();  ?>
 <?php $today = current_time('Ymd'); ?>
 <main class="calendarPage">
-  <section class="container">
+  <section class="container calendarContainer">
   <?php // Start the loop ?>
 
     <?php $args = array( 
@@ -10,12 +10,12 @@
           'meta_query' => array(
             'relation' => 'AND',
           'start_clause' => array(
-                'key'   => 'date_start',
+                'key'   => 'date_end',
                 'compare' => '>=',
                 'value'   => $today
             ),
             'end_clause' => array(
-                'key'   => 'date_start',
+                'key'   => 'date_end',
                 'compare' => '>=',
                 'value'   => $today
             )
@@ -42,8 +42,10 @@
 <?php // if there are posts, Start the Loop. ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
-  <a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">
+  <h2 class="headerCalendar">Upcoming:</h2>
+
     <article id="post-<?php the_ID(); ?>" class="calendarEvent" aria-label="Event information container">
+      <a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">
       <section class="dateCalendar">
           <section class="eventDateCalendar">
             <?php 
@@ -88,8 +90,9 @@
       <section class="goCalendar">
         <span>&#8594</span>
       </section>
+         </a>
     </article>
-   </a>
+
 <?php endwhile; // End the loop. Whew. ?>
 
   <?php wp_reset_query();?> 

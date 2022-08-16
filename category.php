@@ -10,10 +10,11 @@
     			echo '' . $category_description . '';
     	   get_template_part( 'loop', 'category' );
         ?>
+         <?php echo do_shortcode('[wd_asp elements="search,settings" ratio="100%,100%" id=1]'); ?>
+
+         <?php echo do_shortcode('[wd_asp elements="results" ratio="100%" id=1]'); ?>
 
     </div> <!-- /.content -->
-
-    <?php get_sidebar(); ?>
 
   </div> <!-- /.container -->
 </div> <!-- /.main -->
