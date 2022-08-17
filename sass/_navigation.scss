@@ -10,11 +10,11 @@
 }
 #menu-header-menu {
 	list-style: none;
-	@extend .flex;
+	display: flex;
 	justify-content: space-between;
 }
 .primaryMenu {
-	width: 80%;
+	width: 85%;
 	background: white;
 	padding-right: 5%;
 	padding-top: 20px;
@@ -25,7 +25,12 @@
 .logo {
 	padding-left: 5%;
 	 padding-top: 40px;
+	 width: 15%;
 	 max-width: 190px;
+	 img {
+	 	filter: drop-shadow(16px 16px 26px #FFFFFF);
+	 }
+
 }
 .smaller {
 	background: white;
@@ -44,3 +49,4 @@
 		border: none;
 	}
 }
+

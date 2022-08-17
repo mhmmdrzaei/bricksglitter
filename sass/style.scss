@@ -233,7 +233,7 @@ background: linear-gradient(169deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 
 //single Event page
 
 .singleEventContainer {
-	padding-top:250px; 
+	margin-top:250px; 
 	@extend .flex;
 	justify-content: space-between;
 	.pageMain {
@@ -425,7 +425,7 @@ background: linear-gradient(169deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 
 	padding: 0 !important;
 	border: 1px solid black !important;
 	margin-bottom: 50px !important;
-	height: fit-content;
+	height: fit-content !important;
 	.featuredImageResutl{
 		border-bottom: 1px solid black !important;
 	}
@@ -447,7 +447,7 @@ background: linear-gradient(169deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 
 		color: #0029FF !important;
 	}
 }
- #ajaxsearchprobsettings1_1.searchsettings .asp_sett_scroll, #ajaxsearchprobsettings1_2.searchsettings .asp_sett_scroll, div.asp_sb.asp_sb_1.searchsettings .asp_sett_scroll { 
+ #ajaxsearchprobsettings1_1.searchsettings .asp_sett_scroll, #ajaxsearchprobsettings1_2.searchsettings .asp_sett_scroll, div.asp_sb.asp_sb_1.searchsettings .asp_sett_scroll, #ajaxsearchprobsettings3_1.searchsettings .asp_sett_scroll, #ajaxsearchprobsettings3_2.searchsettings .asp_sett_scroll, div.asp_sb.asp_sb_3.searchsettings .asp_sett_scroll { 
  	max-height: 100% !important;
  	// @extend .flex;
  }
@@ -531,6 +531,16 @@ background: linear-gradient(169deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 
 }
 
 
+//quaries
+@media(max-width: 775px){ 
+	#hamburger {
+		display: block;;
+	}
+	.primaryMenu {
+		display: none;
+	}
 
+
+}
 
 

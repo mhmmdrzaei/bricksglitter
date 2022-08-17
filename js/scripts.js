@@ -126,22 +126,7 @@ $(function(){
 
 	})(jQuery);
 
-	$(function(){
-	 //the shrinkHeader variable is where you tell the scroll effect to start.
-	 var shrinkHeader = 50;
-	  $(window).scroll(function() {
-	    var scroll = getCurrentScroll();
-	      if ( scroll >= shrinkHeader ) {
-	           $('.headeContainer').addClass('smaller');
-	        }
-	        else {
-	            $('.headeContainer').removeClass('smaller');
-	        }
-	  });
-	function getCurrentScroll() {
-	    return window.pageYOffset || document.documentElement.scrollTop;
-	    }
-	});
+	
 
 	//languages options
 
@@ -178,7 +163,23 @@ $(function(){
 	 });
 
 	
-
+	 $(function(){
+	 //the shrinkHeader variable is where you tell the scroll effect to start.
+	 var shrinkHeader = 50;
+	 var x = $(window).width();
+	  $(window).scroll(function() {
+	    var scroll = getCurrentScroll();
+	      if ( (scroll >= shrinkHeader) && (x >= 700) ) {
+	           $('.headeContainer').addClass('smaller');
+	        }
+	        else {
+	            $('.headeContainer').removeClass('smaller');
+	        }
+	  });
+	function getCurrentScroll() {
+	    return window.pageYOffset || document.documentElement.scrollTop;
+	    }
+	});
 
 
 

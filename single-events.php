@@ -56,17 +56,19 @@
               } 
               ;?>
               
-              <section class="ctaLinks">
+             
                 <?php if( have_rows('cta_links' ) ): ?>
+                   <section class="ctaLinks">
                     <?php while( have_rows('cta_links') ): the_row(); ?>
 
                     <a class="ctaLink " href="<?php the_sub_field('link_url'); ?>" target="_blank"><?php the_sub_field('link_label'); ?></a>
 
                     
                   <?php endwhile; ?>
+                   </section>
                 <?php endif; ?>
                 
-              </section>
+             
               <section class="description">
                 <?php the_field('description'); ?>
               </section>
