@@ -4,9 +4,8 @@
     <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
     <section class="pageMain">
       <?php 
-          $embedCode = get_field('livestream_embed_code');
-          if( !empty( $embedCode ) ): ?>
-             <section class="livestreamOn">
+          if( get_field('live_video_') == 'Yes' ): ?>
+             <section class="livestreamOn videoContainer">
                <?php the_field('livestream_embed_code'); ?>
              </section> 
           <?php else: ; ?>
@@ -21,10 +20,10 @@
                   <?php 
                       $startDate = get_field('date_start');
                       $endDate = get_field('date_end');
-                      if( !empty( $endDate ) ): ?>
+                      if( !empty( $startDate ) ): ?>
                          <?php the_field('date_start');?> - <?php the_field('date_end'); ?><br>
                       <?php else: ; ?>
-                       <?php the_field('date_start');?></br>
+                       <?php the_field('date_end');?></br>
                       <?php endif; ?>
               </section>
               <section class="eventTime">
@@ -53,10 +52,10 @@
                   $address = trim( $address, ', ' );
 
                   // Display HTML.
-                  echo '<p>' . $address . '.<br> <a href="#map">↓ Map</a></p>';
+                  echo '<p>' . $address . '.<br> <a href="#map">↓ Map</a></p></section>';
               } 
               ;?>
-              </section>
+              
               <section class="ctaLinks">
                 <?php if( have_rows('cta_links' ) ): ?>
                     <?php while( have_rows('cta_links') ): the_row(); ?>
