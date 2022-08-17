@@ -223,5 +223,30 @@ $(function(){
 	 	  } // End if
 	 	});
 
+	 //hamburger menu
+	 $('#hamburger').click(function(){
+	 $('.primaryMenu,.socialMenu,.footerMenu').toggleClass('open');
+	 $('.headeContainer').toggleClass('headerContainerMobile');
+	   $('.menu__hero').toggleClass('menuvisibleMobile');
+	   $('body').toggleClass('bodyOveflow');
+	   // $(body).toggleClass('hidden');
+	   window.setTimeout(function() {
+	     
+	   }, 0);
+
+
+
+	 });
+
+	 $('.mobileArchiveControl').click(function(){
+	 	$('.searchSettings').addClass('settingsMobile');
+	 	$('.mobileArchiveControl').html('Update Search Filters +');
+	 	$('.archivePage').addClass('bodyOveflow');
+	 });
+	 $('.close,.applyFilters').click(function(){
+	 	$('.searchSettings').removeClass('settingsMobile');
+	 	$('.archivePage').removeClass('bodyOveflow');
+	 });
+
 
 });
