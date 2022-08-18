@@ -395,9 +395,14 @@ background: linear-gradient(169deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 
 				width: 73%;
 			}
 		}
+		.calendargoLink {
+			width: 5%;
+		}
 	}
 }
-
+.calendargoLink {
+	width: 5%;
+}
 //archive page
 .mobileArchiveControl {
 	display: none;
@@ -471,8 +476,10 @@ background: linear-gradient(169deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 
  	height: 100% !important;
  }
 
-
+.asp_res_url span{
+	@include fontSize(14);
  //sponsors & Covid Page
+}
 
 .page-id-1110,.page-id-99, .page-id-43, .page-id-1048 {
 background: rgb(255,255,255);

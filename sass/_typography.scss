@@ -50,4 +50,11 @@ h1, h2, h3, h4, h5, h6,p {
   top: 10px;
    pointer-events: none;
    z-index: 1;
+   font-family: 'GoodSans-BoldItalic', sans-serif;
+}
+.ctaLink {
+  font-family: 'GoodSans-Bold', sans-serif;
+  &:hover {
+    color: white;
+  }
 }

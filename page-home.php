@@ -141,21 +141,6 @@
                                      <?php the_title(); ?>
                                    </a>
                                  </h2>
-                                 <section class="postexcerpt"   aria-label="Excerpt from event description">
-                                    <?php 
-                                       $project_desc = get_field( 'description' );
-                                       if( !empty( $project_desc ) ):
-                                           $trimmed_text = wp_trim_excerpt_modified( $project_desc, 30 );
-                                           $last_space = strrpos( $trimmed_text, ' ' );
-                                           $modified_trimmed_text = substr( $trimmed_text, 0, $last_space );
-                                           echo $modified_trimmed_text . '...';
-                                       endif; 
-
-
-                                     ?>
-                                     <br><br><a class="readmoreLink"href="<?php the_permalink(); ?>">More Information &#8594</a>
-
-                                 </section>
                                      <section class="dateCalendar"   aria-label="Event Date and time">
                                          <section class="eventDateCalendar">
                                            <?php 
@@ -171,10 +156,26 @@
                                            <?php 
                                                $eventTime = get_field('event_time');
                                                if( !empty( $eventTime ) ): ?>
-                                                 <?php the_field('event_time'); ?>
+                                                 <?php the_field('event_time'); ?><br><br>
                                                <?php endif; ?>
                                        </section>
                                  </section>
+                                 <section class="postexcerpt"   aria-label="Excerpt from event description">
+                                    <?php 
+                                       $project_desc = get_field( 'description' );
+                                       if( !empty( $project_desc ) ):
+                                           $trimmed_text = wp_trim_excerpt_modified( $project_desc, 30 );
+                                           $last_space = strrpos( $trimmed_text, ' ' );
+                                           $modified_trimmed_text = substr( $trimmed_text, 0, $last_space );
+                                           echo $modified_trimmed_text . '...';
+                                       endif; 
+
+
+                                     ?>
+                                     <br><br><a class="readmoreLink"href="<?php the_permalink(); ?>">More Information &#8594</a>
+
+                                 </section>
+ 
                               </section>
 
                               

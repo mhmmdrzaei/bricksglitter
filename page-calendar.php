@@ -87,6 +87,7 @@
       <section class="eventTypeCalendar" aria-label="Tagged Event Type">
         <?php $terms = the_terms($post->ID, 'topics',''); ?>
       </section>
+       <a class="calendargoLink" href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">
       <section class="goCalendar">
         <span>&#8594</span>
       </section>

@@ -8,12 +8,12 @@
       </section>
       <section class="results" aria-label="Search Results are displayed in this container">
         
-        <?php echo do_shortcode('[wd_asp elements="results" ratio="100%" id=3]'); ?>
+        <?php echo do_shortcode('[wd_asp elements="results" ratio="100%" id=1]'); ?>
 
       </section>
       <section class="searchSettings" aria-label="Search Setting navigation">
         <section class="close">&#x2715</section>
-        <?php echo do_shortcode('[wd_asp elements="search,settings" ratio="100%,100%" id=3]'); ?>
+        <?php echo do_shortcode('[wd_asp elements="search,settings" ratio="100%,100%" id=1]'); ?>
         <button class="applyFilters">Apply Search Filters</button>
       </section>
       
