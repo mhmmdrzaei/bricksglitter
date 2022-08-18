@@ -12,7 +12,7 @@
 
       </section>
       <section class="searchSettings">
-        <section class="close">X</section>
+        <section class="close">&#x2715</section>
         <?php echo do_shortcode('[wd_asp elements="search,settings" ratio="100%,100%" id=1]'); ?>
         <button class="applyFilters">Apply Search Filters</button>
       </section>

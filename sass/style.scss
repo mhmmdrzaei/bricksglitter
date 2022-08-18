@@ -207,7 +207,7 @@ background: linear-gradient(169deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 
 	}
 	.halfwidthAnnoucementContent {
 		background: white;
-		padding: 70px 30px 70px;
+		padding: 50px 30px 30px;
 		margin-top: -10px;
 		border: 1px solid black;
 	}
@@ -467,9 +467,10 @@ background: linear-gradient(169deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 
  // 	border-radius: 25px !important;
 
  // }
- .result {
+ #ajaxsearchprores3_1 .results {
  	height: 100% !important;
  }
+
 
  //sponsors & Covid Page
 
@@ -759,11 +760,13 @@ background: linear-gradient(169deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 
 		}
 		.searchSettings {
 			width: 100%;
-			display: none;
+			// display: none;
+			opacity: 0;
 		}
 		.settingsMobile {
 			position: fixed;
 			display: block;
+			opacity: 1;
 			top: 0;
 			z-index: 12;
 			height: 100vh;
@@ -776,7 +779,7 @@ background: linear-gradient(169deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 
 				text-align: right;
 				margin-right: 5%;
 				margin-top: 10px;
-				@include fontSize(15);
+				@include fontSize(20);
 			}
 			.applyFilters{
 				display: block;
@@ -807,6 +810,7 @@ background: linear-gradient(169deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 
 	#ajaxsearchprobsettings1_1.searchsettings .asp_sett_scroll, #ajaxsearchprobsettings1_2.searchsettings .asp_sett_scroll, div.asp_sb.asp_sb_1.searchsettings .asp_sett_scroll, #ajaxsearchprobsettings3_1.searchsettings .asp_sett_scroll, #ajaxsearchprobsettings3_2.searchsettings .asp_sett_scroll, div.asp_sb.asp_sb_3.searchsettings .asp_sett_scroll {  
 		width: 100% !important;
 	}
+
 //backgrounds
 .page-template-default {
 	background: rgb(255,255,255);

@@ -78,10 +78,10 @@
                                       <?php 
                                           $startDate = get_field('date_start');
                                           $endDate = get_field('date_end');
-                                          if( !empty( $endDate ) ): ?>
+                                          if( !empty( $startDate ) ): ?>
                                              <?php the_field('date_start');?> - <?php the_field('date_end'); ?><br>
                                           <?php else: ; ?>
-                                           <?php the_field('date_start');?></br>
+                                           <?php the_field('date_end');?></br>
                                           <?php endif; ?>
                                   </section>
                                   <section class="eventTimeCalendar">
@@ -161,10 +161,10 @@
                                            <?php 
                                                $startDate = get_field('date_start');
                                                $endDate = get_field('date_end');
-                                               if( !empty( $endDate ) ): ?>
+                                               if( !empty( $startDate ) ): ?>
                                                   <?php the_field('date_start');?> - <?php the_field('date_end'); ?><br>
                                                <?php else: ; ?>
-                                                <?php the_field('date_start');?></br>
+                                                <?php the_field('date_end');?></br>
                                                <?php endif; ?>
                                        </section>
                                        <section class="eventTimeCalendar">
