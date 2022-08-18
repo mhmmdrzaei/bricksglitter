@@ -16,7 +16,7 @@
                 $title = $desktopImg['title'];
                 $alt = $desktopImg['alt'];
                 $caption = $desktopImg['caption']; ?>
-                <figure class="desktopImg">
+                <figure class="desktopImg"   aria-label="Festival promotional Image">
                   <img src="<?php echo esc_url($url); ?>" alt="<?php echo esc_attr($alt); ?>">
                   <a href="#eventsStart"><section class="eventsDown">
                       Upcoming Events
@@ -32,14 +32,14 @@
                 $title = $mobileImg['title'];
                 $alt = $mobileImg['alt'];
                 $caption = $mobileImg['caption']; ?>
-                <figure class="mobileImg">
+                <figure class="mobileImg"   aria-label="Festival Promotional Image">
                   <img src="<?php echo esc_url($url); ?>" alt="<?php echo esc_attr($alt); ?>">
                   <a href="#eventsStart"><section class="eventsDown">
                       Upcoming Events
                   </section></a>
                </figure>
             <?php endif; ?>
-            <section class="homepageContainer" id="eventsStart">
+            <section class="homepageContainer" id="eventsStart"   aria-label="Container with all listed activity">
             <?php if( have_rows('home_page_content') ): ?>
                 <?php while( have_rows('home_page_content') ): the_row(); ?>
                   <?php if( get_row_layout() == 'full_width_events_post' ): ?>
@@ -55,25 +55,25 @@
 
                            <?php 
                                if( get_field('live_video_') == 'Yes' ): ?>
-                                  <section class="livestreamOnHome videoContainer">
+                                  <section class="livestreamOnHome videoContainer"   aria-label="Live Video Stream on the website">
                                     <?php the_field('livestream_embed_code'); ?>
                                   </section> 
                                <?php else: ; ?>
-                                <figure class="eventSingleImgHome">
+                                <figure class="eventSingleImgHome"   aria-label="Event Featured Image">
                                 <a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">
                                   <?php  the_post_thumbnail('large');?>
                                 </a>
                                 </figure>
                                <?php endif; ?>
-                           <section class="enteryinfo">
+                           <section class="enteryinfo"   aria-label="Event Information container">
                             <section class="titleInfo">
-                                <h2 class="entry-title" aria-label="featured item title">
+                                <h2 class="entry-title" aria-label="featured event title">
                                   <a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">
                                     <?php the_title(); ?>
                                   </a>
                                 </h2>
 
-                                <section class="dateCalendar">
+                                <section class="dateCalendar"   aria-label="Event Date and Time">
                                     <section class="eventDateCalendar">
                                       <?php 
                                           $startDate = get_field('date_start');
@@ -94,7 +94,7 @@
                             </section>
                         </section>
                               
-                              <section class="postexcerpt">
+                              <section class="postexcerpt"   aria-label="Excerpt from event description">
                                  <?php 
                                     $project_desc = get_field( 'description' );
                                     if( !empty( $project_desc ) ):
@@ -129,19 +129,19 @@
                             <section class="halfwidthpost"  aria-label="featured information container">
                               <?php the_terms( $post->ID, 'topics', ' ' ); ?>
 
-                             <figure class="eventSingleImgHome">
+                             <figure class="eventSingleImgHome"   aria-label="Event Featured Image">
                                 <a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">
                                <?php  the_post_thumbnail('large');?>
                            </a>
                              </figure>
 
-                              <section class="enteryinfo">
+                              <section class="enteryinfo"   aria-label="Event Details">
                                  <h2 class="entry-title" aria-label="featured item title">
                                    <a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">
                                      <?php the_title(); ?>
                                    </a>
                                  </h2>
-                                 <section class="postexcerpt">
+                                 <section class="postexcerpt"   aria-label="Excerpt from event description">
                                     <?php 
                                        $project_desc = get_field( 'description' );
                                        if( !empty( $project_desc ) ):
@@ -156,7 +156,7 @@
                                      <br><br><a class="readmoreLink"href="<?php the_permalink(); ?>">More Information &#8594</a>
 
                                  </section>
-                                     <section class="dateCalendar">
+                                     <section class="dateCalendar"   aria-label="Event Date and time">
                                          <section class="eventDateCalendar">
                                            <?php 
                                                $startDate = get_field('date_start');
@@ -187,13 +187,13 @@
                           <?php elseif( get_row_layout() == 'half_width_announcement' ): ?>
                            <?php if( have_rows('half_width_announcement_post' ) ): ?>
                                <?php while( have_rows('half_width_announcement_post') ): the_row(); ?>
-                                 <section class="halfwidthAnnouncement">
+                                 <section class="halfwidthAnnouncement"   aria-label="Festival Announcement">
                                     <h3 class="announcement"><i>Announcement</i></h3>
                                     <section class="halfwidthAnnoucementContent">
                                        <section class="announcementText">
                                           <?php the_sub_field('annoucement_text'); ?>
                                        </section>
-                                       <section class="annoucementCTAS">
+                                       <section class="annoucementCTAS"   aria-label="External Links Associated with Announcement">
                                           <?php if( have_rows('cta_links_announcement' ) ): ?>
                                               <?php while( have_rows('cta_links_announcement') ): the_row(); ?>
 
@@ -214,13 +214,13 @@
                            <?php elseif( get_row_layout() == 'full_width_announcement' ): ?>
                             <?php if( have_rows('full_width_announcement_post' ) ): ?>
                                 <?php while( have_rows('full_width_announcement_post') ): the_row(); ?>
-                                  <section class="fullwidthAnnouncement">
+                                  <section class="fullwidthAnnouncement"   aria-label="Festival Announcement">
                                      <h3 class="announcement"><i>Announcement</i></h3>
                                      <section class="halfwidthAnnoucementContent">
                                         <section class="announcementText">
                                            <?php the_sub_field('annoucement_text_full'); ?>
                                         </section>
-                                        <section class="annoucementCTAS">
+                                        <section class="annoucementCTAS"  aria-label="External links Associated with Announcement">
                                            <?php if( have_rows('cta_links_announcement_full' ) ): ?>
                                                <?php while( have_rows('cta_links_announcement_full') ): the_row(); ?>
 

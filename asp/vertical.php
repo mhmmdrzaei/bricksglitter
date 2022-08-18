@@ -32,7 +32,7 @@ defined('ABSPATH') or die("You can't access this file directly.");
 ?>
 
 
-<div class='archiveItemEach item<?php echo apply_filters('asp_result_css_class', $asp_res_css_class, $r->id, $r); ?>'>
+<div class='archiveItemEach item<?php echo apply_filters('asp_result_css_class', $asp_res_css_class, $r->id, $r); ?>' aria-label="Listed Item Container, with a featured image of the event and the event title">
 
     <?php do_action('asp_res_vertical_begin_item'); ?>
 

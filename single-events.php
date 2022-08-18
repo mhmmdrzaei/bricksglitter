@@ -13,9 +13,9 @@
              <?php  the_post_thumbnail('large');?>
            </figure>
           <?php endif; ?>
-          <section class="eventTextInfo">
+          <section class="eventTextInfo"   aria-label="Event information including title, date, time and location">
               <h2><?php the_title(); ?></h2>
-              <section class="date">
+              <section class="date"   aria-label="Event Date and time">
                 <section class="dateEventPage">
                   <?php 
                       $startDate = get_field('date_start');
@@ -38,7 +38,7 @@
               <?php 
               $location = get_field('event_location');
               if( $location ) { ;?>
-                <section class="addresslocation">
+                <section class="addresslocation"   aria-label="Event Address">
                   <?php 
                   // Loop over segments and construct HTML.
                   $address = '';
@@ -58,7 +58,7 @@
               
              
                 <?php if( have_rows('cta_links' ) ): ?>
-                   <section class="ctaLinks">
+                   <section class="ctaLinks"   aria-label="Links associated with event including registration links">
                     <?php while( have_rows('cta_links') ): the_row(); ?>
 
                     <a class="ctaLink " href="<?php the_sub_field('link_url'); ?>" target="_blank"><?php the_sub_field('link_label'); ?></a>
@@ -69,7 +69,7 @@
                 <?php endif; ?>
                 
              
-              <section class="description">
+              <section class="description"   aria-label="Event Description">
                 <?php the_field('description'); ?>
               </section>
           </section>
@@ -78,7 +78,7 @@
             <?php if( have_rows('images_and_videos') ): ?>
                 <?php while( have_rows('images_and_videos') ): the_row(); ?>
                   <?php if( get_row_layout() == 'embedded_video' ): ?>
-                    <section class="videoContainer">
+                    <section class="videoContainer"   aria-label="Embedded content container">
                       <?php the_sub_field('content_link_video') ?>
                     </section>
                    <?php elseif( get_row_layout() == 'full_width_horizontal_image' ): ?>
@@ -170,7 +170,7 @@
              <?php endwhile; ?>
            <?php endif; ?>
           </section>
-          <section class="map" id="map">
+          <section class="map" id="map"   aria-label="Google Map location">
             <?php 
             $location = get_field('event_location');
             if( $location ): ?>
@@ -183,7 +183,7 @@
        
     </section>
 
-    <section class="pageSide">
+    <section class="pageSide"   aria-label="Event Tags, year and type of event">
       <section class="pagesideContent">
         <?php $terms = the_terms($post->ID, 'topics',''); ?>
        <section class="eventYearSingle">

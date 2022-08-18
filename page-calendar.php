@@ -46,7 +46,7 @@
 
     <article id="post-<?php the_ID(); ?>" class="calendarEvent" aria-label="Event information container">
       <a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">
-      <section class="dateCalendar">
+      <section class="dateCalendar"aria-label="Event Date and time listed in this container ">
           <section class="eventDateCalendar">
             <?php 
                 $startDate = get_field('date_start');
@@ -66,11 +66,11 @@
         </section>
 
       </section>
-      <section class="infoCalendar">
+      <section class="infoCalendar" >
         <h3 class="entry-title" aria-label="event name">
             <?php the_title(); ?>
         </h3>
-        <section class="eventDescriptionCalendar">
+        <section class="eventDescriptionCalendar"aria-label="Event Description">
           <?php 
              $project_desc = get_field( 'description' );
              if( !empty( $project_desc ) ):
@@ -84,7 +84,7 @@
            ?>
         </section>
       </section>
-      <section class="eventTypeCalendar">
+      <section class="eventTypeCalendar" aria-label="Tagged Event Type">
         <?php $terms = the_terms($post->ID, 'topics',''); ?>
       </section>
       <section class="goCalendar">

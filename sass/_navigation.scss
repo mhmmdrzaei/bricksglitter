@@ -24,9 +24,9 @@
 }
 .logo {
 	padding-left: 5%;
-	 padding-top: 40px;
+	 padding-top: 15px;
 	 width: 15%;
-	 max-width: 190px;
+	 max-width: 150px;
 	 img {
 	 	filter: drop-shadow(16px 16px 26px #FFFFFF);
 	 }
@@ -38,10 +38,10 @@
 	transition: all 0.2s ease-out 0s;
 
 	.logo {
-		padding-top: 20px;
+		padding-top: 10px;
 		width: 9%;
 		min-width: 120px;
-		max-width: 160px;
+		max-width: 150px;
 		padding-bottom: 5px;
 		transition: all 1.9s ease-out 0s;
 	}

@@ -9,7 +9,7 @@
               <?php 
 
               if( get_sub_field('language_label') == 'Right To Left' ) {; ?>
-                  <section class="aboutLangEach rtldirection" id="<?php the_sub_field('language_label') ?>">
+                  <section class="aboutLangEach rtldirection" id="<?php the_sub_field('language_label') ?>" aria-label="About text in selected language" >
                     <?php the_sub_field('language_text') ?>
                   </section>
               <?php } else { ?>
@@ -23,7 +23,7 @@
       </section>
       <section class="pageside">
         <section class="pageSideContent">
-          <section class="languageSelect">
+          <section class="languageSelect" aria-label="Link to Language of choice to read the about page">
             <h3>Language:</h3>
             <?php if( have_rows('about_page_content' ) ): ?>
                 <?php while( have_rows('about_page_content') ): the_row(); ?>
