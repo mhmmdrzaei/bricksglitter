@@ -1,6 +1,5 @@
 $(function(){
 
-	console.log("It's working");
 	(function( $ ) {
 
 	/**
@@ -136,19 +135,7 @@ $(function(){
 	$('.lds-roller').hide();
 
 
-	 // $(".languageLinkEach").click(function() {
-
-	 //    if ($('.aboutLangEach').hasClass('visible')) {
-	 //      $('.aboutLangEach').removeClass('visible');
-
-	 //    } 
-	 //    var id = $(this).index();
-	 //    console.log(id);
-	 //    $('aboutLangEach:nth-child(id)').addClass('visible');
-	 //    $('.pageMain').eq(('.aboutLangEach').index(id)).addClass('visible');
-	 //    // $(this).next('.languageChoiceContent').addClass('visible');
-
-	 //  });
+	
 
 	 $( '.languageLinkEach' ).on( 'click', function() {
 	 	   if ($('.languageLinkEach').hasClass('higlightedLink')) {
@@ -158,8 +145,7 @@ $(function(){
 	 	  $(this).addClass('higlightedLink');
 	 	 var id = ($(this).index() - 1);
 	    $('.aboutLangEach').removeClass( 'visible' ).eq( id ).addClass( 'visible' );
-	 //    // $('.aboutLangEach').eq( $(this).index() ).addClass( 'visible' );
-	 //     // $(".aboutLangEach").removeClass("visible"); $(e.href).addClass("visible", true);
+	
 	 });
 
 	

@@ -30,7 +30,7 @@
  );
       query_posts( $args ); // hijack the main loop
 
-      if ( ! have_posts() ) : ?>
+    if ( ! have_posts() ) : ?>
 
   <article id="post-0" class="calendarPosts" aria-label="no events listed at this time">
      <section class="excerptPosts fullwidthexcerpts">
@@ -40,9 +40,8 @@
 
 <?php endif; // end if there are no posts ?>
 <?php // if there are posts, Start the Loop. ?>
-  <h2 class="headerCalendar">Upcoming:</h2>
+  
 <?php while ( have_posts() ) : the_post(); ?>
-
 
     <article id="post-<?php the_ID(); ?>" class="calendarEvent" aria-label="Event information container">
       <a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">
